@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,26 +17,38 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('My card'),
-        backgroundColor: Colors.blueGrey,
-      ),
-      body: Center(
-        child: Text(
-          'You\'ve eaten $nDonuts donuts',
-          style: TextStyle(
-            fontSize: 20.0,
-          ),
+      backgroundColor: Colors.teal,
+      body: SafeArea(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Container(
+              color: Colors.red,
+              width: 100.0,
+            ),
+            Center(
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      color: Colors.yellow,
+                      width: 100.0,
+                      height: 100.0,
+                    ),
+                    Container(
+                      color: Colors.green[200],
+                      width: 100.0,
+                      height: 100.0,
+                    ),
+                  ]),
+            ),
+            Container(
+              color: Colors.blueAccent,
+              width: 100.0,
+            ),
+          ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.red[400],
-        child: Icon(
-          Icons.add,
-        ),
-        onPressed: () => setState(() {
-          nDonuts++;
-        }),
       ),
     );
   }
